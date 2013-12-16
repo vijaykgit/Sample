@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.nbos.hb.pojos.Employee" table="EMPLOYEE"
+		entity-name="Emp">
+		<id name="eid" column="EID" type="int">
+			<generator class="assigned"></generator>
+		</id>
+		<property name="ename" column="ENAME" type="string" not-null="true"></property>
+		<property name="sal" column="SAL" type="double" not-null="true"></property>
+		<many-to-one name="deptno" column="DEPTNO" cascade="save-update" 
+			entity-name="Dept" foreign-key="DEPT_FK" class="com.nbos.hb.pojos.Department"></many-to-one>
+
+	</class>
+	<!-- <class name="com.nbos.hb.pojos.Employee" table="EMPLOYEE"> <id name="eid" 
+		column="EID" type="int"> <generator class="assigned"></generator> </id> <property 
+		name="ename" column="ENAME" type="string" not-null="true"></property> </class> -->
+</hibernate-mapping>

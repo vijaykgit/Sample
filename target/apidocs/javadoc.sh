@@ -1,0 +1,1 @@
+/usr/lib/jvm/jdk1.6.0_32/jre/../bin/javadoc @options @packages @argfile

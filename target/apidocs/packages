@@ -1,0 +1,7 @@
+com.nbos.hb.pojos
+com.nbos.hb.service
+com.nbos.hb.service.order
+com.nbos.hb.service.detached
+com.nbos.hb.service.projections
+com.nbos.hb.service.criteria
+com.nbos.hb.util

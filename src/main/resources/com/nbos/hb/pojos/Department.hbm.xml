@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.nbos.hb.pojos.Department" table="DEPARTMENT"
+		entity-name="Dept">
+		<id name="dno" column="DNO" type="int">
+			<generator class="assigned"></generator>
+		</id>
+		<property name="dname" column="DNAME" type="string" not-null="true"></property>
+		<property name="dloc" column="DLOC" type="string" not-null="true"></property>
+		<set name="emp" cascade="save-update,delete" inverse="true">
+			<key foreign-key="DEPT_FK">
+				<column name="deptno"></column>
+			</key>
+			<one-to-many class="com.nbos.hb.pojos.Employee"
+				entity-name="Emp" />
+		</set>
+		<!-- column should be the foreign column in person table -->
+
+	</class>
+</hibernate-mapping>

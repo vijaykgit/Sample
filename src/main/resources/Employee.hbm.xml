@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.nbos.hb.pojos.Employee" table="EMPLOYEE"
+		entity-name="Emp">
+		<id name="eno" column="EMPNO" type="int">
+			<generator class="native"></generator>
+		</id>
+		<property name="ename" column="ENAME" type="string" not-null="true"></property>
+		<property name="job" column="JOB" type="string" not-null="true"></property>
+		<property name="mgr" column="MGR" type="int"></property>
+		<property name="hiredate" column="HIREDATE" type="date"></property>
+		<property name="sal" column="SAL" type="double"></property>
+		<property name="comm" column="COMM" type="double"></property>
+		<!-- name is property in EmployeeMO and column is in this table EMPLOYEEMO -->
+		<many-to-one name="deptno" class="com.nbos.hb.pojos.Department"
+			entity-name="Dept" column="DEPTNO" cascade="save-update,delete"
+			foreign-key="DEPT_FK"></many-to-one>
+
+	</class>
+	<class name="com.nbos.hb.pojos.Employee" table="EMPLOYEE">
+		<id name="eno" column="EMPNO" type="int">
+			<generator class="native"></generator>
+		</id>
+	</class>
+
+</hibernate-mapping>
