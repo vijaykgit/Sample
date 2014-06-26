@@ -1,0 +1,9 @@
+HEAD is the commit number from which we have started the changes
+HEAD^ is the previous commit
+HEAD~2 is the 2nd previous commit
+
+git reset --soft HEAD^ is for
+when we add the changed files and make commit, then the HEAD is at the new commit.
+so, we want to go back to the previous commit and the changes in the latest commit we have done to be availabe. we use the --soft.
+
+git reset --hard HEAD

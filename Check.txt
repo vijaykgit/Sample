@@ -4,3 +4,4 @@ this is to test for checkout
 test checkout commit
 this is for testing the stashing
 test HEAD and HEAD^ and ORIG_HEAD
+test reset --hard HEAD
