@@ -1,0 +1,16 @@
+create a backup of schema with table data
+
+vijaykumars@NBLAP34 ~
+$ mysqldump -uroot -p123456 cl_dev_journal > journalbackup.sql;
+or 
+vijaykumars@NBLAP34 ~
+$ mysqldump --user root --password=123456 cl_dev_journal > journal.sql;
+vijaykumars@NBLAP34 ~
+
+vijaykumars@NBLAP34 ~
+$ mysql --user root --password=123456 new_db < journalbackup.sql
+ERROR 1049 (42000): Unknown database 'new_db'
+
+create a schema named 'new_db', then
+vijaykumars@NBLAP34 ~
+$ mysql --user root --password=123456 new_db < journalbackup.sql
