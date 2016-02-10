@@ -7,6 +7,8 @@ vijaykumars@NBLAP34 ~
 $ mysqldump --user root --password=123456 cl_dev_journal > journal.sql;
 vijaykumars@NBLAP34 ~
 
+import data into scheam from backup file
+
 vijaykumars@NBLAP34 ~
 $ mysql --user root --password=123456 new_db < journalbackup.sql
 ERROR 1049 (42000): Unknown database 'new_db'
